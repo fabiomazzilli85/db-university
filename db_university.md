@@ -32,7 +32,7 @@ WHERE DATE_ADD(date_of_birth, INTERVAL 30 YEAR) <= CURDATE();
 
 ```
 SELECT *
-FROM courses
+FROM `courses`
 WHERE period = 'I semestre'
 AND year = 1;
 ```
