@@ -22,7 +22,7 @@ WHERE `CFU` > 10
 ```
 SELECT *
 FROM `students`
-WHERE DATE_ADD(date_of_birth, INTERVAL 30 YEAR) <= CURDATE();
+WHERE DATE_ADD(date_of_birth, INTERVAL 31 YEAR) <= CURDATE();
 
 ```
 
