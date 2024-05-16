@@ -93,7 +93,12 @@ ORDER BY s.surname, s.name;
 
 ### Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
-```
+```sql
+SELECT t.surname AS cognome_docente, t.name AS nome_docente
+FROM departments dp
+JOIN teachers t
+    ON dp.id = t.id
+WHERE dp.id = 5;
 ```
 
 ### BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. Successivamente, filtrare i tentativi con voto minimo 18.
