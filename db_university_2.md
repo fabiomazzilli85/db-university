@@ -20,7 +20,7 @@ GROUP BY YEAR(`enrolment_date`);
 ### Calcolare la media dei voti di ogni appello d'esame
 
 ```sql
-SELECT AVG(vote) as `media_voto`, `exam_id`
+SELECT AVG(vote) as `media_voto`, `exam_id` as `esame_id`
 FROM `exam_student`
 GROUP BY `exam_id`;
 ```
