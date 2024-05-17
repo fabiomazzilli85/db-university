@@ -102,11 +102,17 @@ JOIN degrees d
 ### Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
 ```sql
-SELECT t.surname AS cognome_docente, t.name AS nome_docente
-FROM departments dp
-JOIN teachers t
-    ON dp.id = t.id
-WHERE dp.id = 5;
+SELECT DISTINCT `teachers`.*
+FROM `departments` 
+INNER JOIN `degrees`
+ON `departments`.id = `degrees`.`department_id`
+INNER JOIN `courses`
+ON `degrees`.id = `courses`.`degree_id`
+INNER JOIN `course_teacher`
+ON `courses`.`id` = `course_teacher`.`course_id`
+INNER JOIN `teachers`
+ON `course_teacher`.`teacher_id` = `teachers`.`id`
+WHERE `departments`.`name` = 'Dipartimento di Matematica'
 ```
 
 ### BONUS: Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il voto massimo. Successivamente, filtrare i tentativi con voto minimo 18.
